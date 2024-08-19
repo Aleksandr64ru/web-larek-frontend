@@ -2,7 +2,6 @@ import { Component } from './base/Components';
 import { ensureElement } from '../utils/utils';
 import { IEvents } from './base/events';
 
-
 interface IModalContent {
 	content: HTMLElement; 
 }
@@ -34,17 +33,15 @@ export class Modal extends Component<IModalContent> {
 
 	// Метод для открытия модального окна
 	open() {
-		this.container.classList.add('modal_active');
+		this.toggleClass(this.container, 'modal_active', true);
 		this.events.emit('modal:open');
 	}
 
 	// Метод для закрытия модального окна
 	close() {
-		this.container.classList.remove('modal_active');
+		this.toggleClass(this.container, 'modal_active', false);
 		this.content = null; // Очищаем содержимое модального окна
 		this.events.emit('modal:close');
-		this.events.emit('form:reset');
-		this.events.emit('order:clear');
 	}
 
 	// Метод для рендеринга модального окна с указанным содержимым

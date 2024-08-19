@@ -12,7 +12,7 @@ import { IProductItem, IAddressForm, IContactsForm } from './types';
 import { Modal } from './components/Modal';
 import { Basket } from './components/Basket';
 import { AddressForm, ContactsForm } from './components/Form';
-import { Success } from './components/Purchase';
+import { Success } from './components/Success';
 
 const events = new EventEmitter();
 

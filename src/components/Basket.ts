@@ -50,13 +50,7 @@ export class Basket extends Component<IBasketContent> {
 
 	// Установка выбранных элементов
 	set selected(items: string[]) {
-		if (items.length) {
-			// Если выбраны элементы, активируем кнопку заказа
-			this.setDisabled(this._button, false);
-		} else {
-			// Если не выбраны элементы, деактивируем кнопку заказа
-			this.setDisabled(this._button, true);
-		}
+		this.setDisabled(this._button, items.length === 0);
 	}
 
 	// Установка общей суммы
