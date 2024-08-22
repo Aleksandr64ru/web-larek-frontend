@@ -147,7 +147,6 @@ events.on('order:open', () => {
 
 // Обработчик события выбора способа оплаты
 events.on('buttonPayments:select', (event: { button: HTMLButtonElement }) => {
-	event.button.classList.add('button_alt-active');
 	appData.setOrderField('payment', event.button.getAttribute('name'));
 });
 
