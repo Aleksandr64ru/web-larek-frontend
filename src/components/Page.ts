@@ -45,11 +45,6 @@ export class Page extends Component<IPage> {
 
     // Установка состояния прокрутки страницы
     set locked(value: boolean) {
-        this.toggleClass(this._wrapper, 'locked', value);
-    }
-
-    // Метод для переключения класса элемента
-    toggleClass(element: HTMLElement, className: string, force?: boolean): void {
-        element.classList.toggle(className, force);
+        this.toggleClass(this._wrapper, 'page__wrapper_locked', value);
     }
 }
